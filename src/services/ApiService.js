@@ -8,4 +8,31 @@ class ApiService {
 
   getFacility = (id) => fetch(this.root+"/facilities/" + id).then(res => res.json())
 
+  postUser = (username) => {
+    return fetch(this.root + "/users", {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({username: username}),
+      }
+    )
+    .then(res => res.json())
+  }
+
+  postGraffiti = (messageId, content, userId) => {
+    return fetch(`${this.root}/messages/${messageId}/graffitis`, {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        content: content,
+        user_id: userId
+      }),
+      }
+    )
+    .then(res => res.json())
+  }
+
 }
