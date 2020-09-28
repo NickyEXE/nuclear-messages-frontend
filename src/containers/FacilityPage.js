@@ -12,6 +12,7 @@ class FacilityPage {
     const {location, messages, name, image_url} = this.facility
     const body = document.body
     body.innerHTML = ""
+    body.classList.add("facility-page")
     const header = document.createElement("h1")
     header.innerText = `Welcome, traveler, to ${name}`
     const jumbotron = document.createElement("img")

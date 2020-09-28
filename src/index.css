@@ -1,3 +1,9 @@
+body {
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(80deg, #7f6b5f, #98a7b2);
+}
+
 .facility-container {
   display: flex;
   justify-content: space-around;
@@ -17,4 +23,31 @@
   width: 100%;
   height: 70%;
   object-fit: cover;
+}
+
+.facility-page img {
+  width: 100%;
+  max-height: 50vh;
+  object-fit: cover;
+}
+
+.message-card {
+  height: 500px;
+  width: 60%;
+  margin: 1em auto;
+  margin-bottom: 1em;
+  padding: 0 3em;
+  border: black .5em solid;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Pictogram_for_nuclear_sites%2C_US_Department_of_Energy%2C_2004.png/1280px-Pictogram_for_nuclear_sites%2C_US_Department_of_Energy%2C_2004.png");
+  background-size: 400px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.message-card h3 {
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+  font-size: 2em;
+  max-width: 80%;
+  margin: 1em auto;
 }
