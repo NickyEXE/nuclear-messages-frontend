@@ -51,3 +51,9 @@ body {
   max-width: 80%;
   margin: 1em auto;
 }
+
+#errors-field {
+  color: red;
+  font-weight: bolder;
+  background-color: black;
+}

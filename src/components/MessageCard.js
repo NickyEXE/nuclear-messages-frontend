@@ -1,7 +1,6 @@
 class MessageCard {
   constructor(message){
     this.message = message
-    console.log(this.message)
     this.render()
     this.setEventListeners()
   }
@@ -17,7 +16,21 @@ class MessageCard {
     const content = e.target.content.value
     const messageId = this.message.id
     const userId = state.user.id
-    api.postGraffiti(messageId, content, userId).then(graffiti => new Graffiti(graffiti, this))
+    api.postGraffiti(messageId, content, userId).then(graffiti => {
+      if (graffiti.errors){
+        const errorsField = document.getElementById("errors-field")
+        errorsField.innerText = graffiti.errors
+        let utterance = new SpeechSynthesisUtterance(graffiti.errors);
+        speechSynthesis.speak(utterance);
+        window.location = "#errors-field"
+        setTimeout(() => {
+          errorsField.innerText = ""
+        }, 5000)
+      }
+      else {
+        new Graffiti(graffiti, this)
+      }
+    })
     e.target.reset()
   }
 

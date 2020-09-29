@@ -22,12 +22,15 @@ class FacilityPage {
     locationEle.innerText = `${name} is a place in what was once known as ${location}.`
     const signageIntro = document.createElement("h4")
     signageIntro.innerText = `As you explore, you see the following signs, some marked by those who came before:`
+
+    const errorsP = document.createElement("p")
+    errorsP.id = "errors-field"
     const messageContainer = document.createElement("div")
     messageContainer.classList.add("message-container")
     const backButton = document.createElement("button")
     backButton.innerText = "Go back"
     backButton.addEventListener("click", () => new FacilityContainer)
-    body.append(backButton, header, jumbotron, locationEle, signageIntro, messageContainer)
+    body.append(backButton, header, jumbotron, locationEle, signageIntro, errorsP, messageContainer)
     messages.forEach(message => new MessageCard(message))
   }
 }
