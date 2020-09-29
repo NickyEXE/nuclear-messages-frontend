@@ -57,3 +57,11 @@ body {
   font-weight: bolder;
   background-color: black;
 }
+
+input#username {
+  background-color: #ffffff00;
+  font-size: 5em;
+  text-align: center;
+  border: none;
+  border-bottom: solid;
+}

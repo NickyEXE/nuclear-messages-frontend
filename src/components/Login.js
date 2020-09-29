@@ -9,6 +9,7 @@ class Login {
     h1.innerText = "What is your name, wastelander?"
     const form = document.createElement("form")
     const input = document.createElement("input")
+    input.id = "username"
     input.name = "username"
     form.appendChild(input)
     form.addEventListener("submit", this.submit)
